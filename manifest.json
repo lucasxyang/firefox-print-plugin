@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "author": "Xiaosiqi Yang",
+  "name": "TopShelf Label Printing",
+  "description": "This add-on allows printing to zebra label printers and is to be used in conjunction with the software TopShelf by Scout, Inc.",
+  "version": "2.0",
+  "externally_connectable": {"matches": ["http://localhost/*","http://localhost:55433/*","http://localhost:62633/*","https://*.scoutsft.com/*"]},
+  "permissions": ["http://localhost/*","http://localhost:55433/*","http://localhost:62633/*","https://*.scoutsft.com/*"],
+  "background": {
+    "scripts": ["background.js"],
+	"persistent": false
+  },
+  "content_scripts": [{
+	"js": ["contentScript.js"],
+	"all_frames": true,
+	"run_at": "document_end",
+	"matches": ["http://localhost/*","http://localhost:55433/*","http://localhost:62633/*","https://*.scoutsft.com/*"]
+  }],
+	"icons": {
+		"128": "logo128tx.gif"
+	}
+}
